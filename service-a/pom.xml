@@ -16,26 +16,6 @@
     <name>Service A (BOM Consumer)</name>
     <description>Imports Spring Boot BOM for version management. Simulates a microservice consuming a shared published BOM.</description>
 
-    <dependencyManagement>
-        <dependencies>
-            <!--
-                Import Spring Boot BOM (published on Maven Central).
-                spring-boot-dependencies:2.7.0 manages:
-                  - snakeyaml 1.30
-                  - jackson-databind 2.13.3
-                  - commons-io 2.11.0
-                This simulates the customer's platform-common-bom pattern.
-            -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.7.0</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
     <dependencies>
         <!-- NO explicit versions -- all managed by Spring Boot BOM -->
         <dependency>
