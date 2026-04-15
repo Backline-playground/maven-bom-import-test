@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <name>Maven BOM Import Test</name>
-    <description>Test project for Backline POC: shared BOM module consumed by application modules via scope=import</description>
+    <description>Test project for Backline POC: services consuming a published BOM (Spring Boot) via scope=import. Simulates customer pattern of a shared BOM consumed by 60+ microservices.</description>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -19,7 +19,6 @@
     </properties>
 
     <modules>
-        <module>platform-common-bom</module>
         <module>service-a</module>
         <module>service-b</module>
     </modules>
