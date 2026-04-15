@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.backline.test</groupId>
+        <artifactId>maven-bom-import-test</artifactId>
+        <version>1.0.0</version>
+    </parent>
+
+    <artifactId>service-a</artifactId>
+    <packaging>jar</packaging>
+
+    <name>Service A (BOM Consumer)</name>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Import the shared BOM -->
+            <dependency>
+                <groupId>com.backline.test</groupId>
+                <artifactId>platform-common-bom</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <dependencies>
+        <!-- NO explicit versions -- all managed by platform-common-bom -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
